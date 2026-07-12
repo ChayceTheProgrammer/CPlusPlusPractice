@@ -1,0 +1,17 @@
+Here will host example code of various c++ implementations of algorithms, keywords, and examples
+Setup Information:
+    Compiler(s): g++, 
+    tasks.json (build instructions)
+    launch.json (debugger settings)
+    c_cpp_properties.json (compiler path and IntelliSense settings)
+    
+
+Resources:
+    Books:
+    1. Programming: Principles and Practice Using C++  (3rd Edition - Bjorne Stroustrup)
+    2. Data Structures and Algorithm Analysis in C++ (4th Edition - Mark Allen Weiss)
+    3. Foundations of Game Engine Development - Vol 1 - Mathematics (Eric Lengyel)
+    4. 
+    Online Resources:
+    1. LearnCplusplus - https://www.learncpp.com/
+    

@@ -1,0 +1,18 @@
+A Data Structure is a way of organizing, storing, and operating on Data
+Operations like:
+-Accessing, Updating, searching, inserting, and removing...etc
+
+A Data Structure is a theoretical concept of representation of data which is ABSTRACT
+Thus a data Structure in Python works in C++ and Java and C etc
+
+Examples:
+1. Array (vector)
+    -stores an ordered list of items, accessible by a positional index
+2. Linked list
+    - stores an ordered list of items in nodes, where each node stores data and has a pointer to the next node
+3. Hash Tables
+    -
+4. Stacks
+5. Queues
+6. Graphs
+7. Trees

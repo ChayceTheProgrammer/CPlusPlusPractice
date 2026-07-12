@@ -1,0 +1,97 @@
+    Computers follow an explicit set of instructions. While they can execute steps very fast, they need to fully understand the context of
+a problem before being able to execute a solution.
+    A Computer Program is the set of instructions that directs a Computer to perform an action in a specific order. Programs are implemented
+in a Programming Language which tells a computer how to complete a task. There are many different Languages, which some include:
+    1. Java
+    2. C++
+    3. Python
+    4. C 
+and many many more. Writing Code is called Programming which is then executed on a computers Hardware, specifically the CPU (Central 
+Processing Unit). Other relevant parts of the computer for programming include:
+    1. Memory - Programs are loaded here before execution
+    2. Storage - Where files/installed programs are stored
+    3. GPU - Graphical Processing Unit, where heavyweight tasks are executed (Common for Graphics Programming).
+More vocabulary include software (any installed/created program), Operating System (OS), Platform (set of hardware and software of
+a computer), and Porting (moving software to a different Platform)
+
+    What is Machine Language?
+This is the 'code' directly understandable by a computers CPU. This means C++ works as an intermediate between human language and the 
+computer. The set of all machine language that a computer can fully understand is called the Instruction Set. Each instruction completes
+a very specific action to execute such as 'compare these two numbers' or 'copy this number into a specific location'.
+Initially, instructions were made in machine code and were very complex and time consuming to create by scientists. See more on this 
+by researching Compilers, and other Low-Level Topics. Some things of note:
+
+    "First, each instruction is composed of a sequence of 1s and 0s. Each individual 0 or 1 is called a binary digit, or bit for short. 
+The number of bits in a machine language instruction varies -- for example, some CPUs process instructions that are always 
+32 bits long, whereas some other CPUs (such as those from the x86 family, which you may be using) have instructions that can 
+be a variable length.
+
+Second, each family of compatible CPUs (e.g. x86, Arm64) has its own machine language, 
+and this machine language is not compatible with the machine language of other CPU families. 
+This means machine language programs written for one CPU family cannot be run on CPUs from a different family!"
+(Credit: https://www.learncpp.com/cpp-tutorial/introduction-to-programming-languages/)
+
+CPUs are apart of a family often called an Instruction Set Architecture (ISA) (formal)
+
+    Assembly Languages
+Machine Learning instructions are written in bits which are ideal for CPUs to read but are difficult for humans to understand intuitively.
+This cumbersome notion motivates the need for programming languages for humans to easily understand and communicate with computers.
+Directly quoting: 
+    "An assembly language (often called assembly for short) is a programming language that essentially functions 
+    as a more human-readable machine language. Here is the same instruction as above in x86 assembly language: mov al, 0x61."
+(Credit: https://www.learncpp.com/cpp-tutorial/introduction-to-programming-languages/)
+This instruction illustrates many of the capabilities that make assembly more readable than machine language.
+
+The operation (what the instruction does) is identified by a short mnemonic (typically a 3-5 letter name). 
+    mov is easily understood to be a mnemonic for “move”, which is an operation that copies bits from one location to another.
+Registers (fast memory locations that are part of the CPU itself) are accessed by a name. 
+    al is the name of a specific register on an x86 CPU.
+Numbers can be specified in a more convenient format. 
+    Assembly languages typically support both decimal numbers (e.g. 97) and hexadecimal numbers (e.g. 0x61).
+It is fairly easy to understand that the assembly instruction mov al, 0x61 copies hexadecimal number 0x61 into the al CPU register.
+
+CPUs do not understand Assembly, so they must be converted to machine language before execution.
+This is done with an Assembler program.
+
+Low-Level Languages
+Low-level languages have a number of notable downsides:
+
+Programs written in a low-level language are not portable. Since a low-level language is tailored to a specific 
+    instruction set architecture, the programs written in the language are too. 
+Porting such programs to other architectures is typically non-trivial.
+Writing a program in a low-level language requires detailed knowledge of the architecture itself. 
+    For instance, the instruction mov al, 061h requires knowing that al refers to a CPU register available 
+    on this specific platform, and understanding how to work with that register. On a different architecture, 
+    this register might be named something different, have different limitations, or not exist at all.
+Low-level programs are hard to understand. While individual assembly instructions can be quite understandable, 
+    it can still be hard to deduce what a section of assembly code is actually doing. 
+    And since assembly programs require many instructions to do even simple tasks, they tend to be quite long
+It is hard to write assembly programs of significant complexity because the language 
+    only provides primitive capabilities. The programmer is left to implement everything they need themselves.
+The primary benefit of low-level languages is that they are fast. 
+    Assembly is still used today when there are sections of code that 
+    are performance critical. And it’s also used in a few other cases, one of which we’ll discuss in a moment.
+
+High Level-languages
+These are the more common programming languages programmers use C++, C, Perl, Java...
+For these languages to be executed on machines they must be Compiled or Interpreted.
+A compiler is a program (or collection of programs) that reads the source code of one language 
+    (usually a high-level language) and translates it into another language (usually a low-level language). 
+    For example, a C++ compiler translates C++ source code into machine code.
+
+Alternatively, an interpreter is a program that directly executes the instructions in the source code without requiring them 
+    to be compiled first. Interpreters tend to be more flexible than compilers, but are less efficient when running programs 
+    because the interpreting process needs to be done every time the program is run. This also means the interpreter must be 
+    installed on every machine where an interpreted program will be run.
+
+Benefits of High level languages
+The benefits allow us to create high level abstractions which can better suit some problems and solving them.
+Consider the instruction a = 97;. This instruction lets us store the value 97 somewhere in memory, without needing 
+to know exactly where that value will be placed, or what specific machine code instruction is needed by the CPU to 
+store that value. In fact, there is nothing platform-specific about this instruction at all. 
+The compiler does all the work to figure out how this C++ instruction translates into platform-specific machine code.
+
+High-level languages allow programmers to write programs without knowing much about the platform it will be run on. 
+This not only makes programs easier to write, it also makes them significantly more portable. If we’re careful, we 
+can write a single C++ that will compile on every platform that has a C++ compiler! A program that is designed to 
+run on multiple platforms is said to be cross-platform.

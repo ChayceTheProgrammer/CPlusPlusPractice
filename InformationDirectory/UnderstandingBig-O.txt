@@ -1,0 +1,128 @@
+Asymptomatic Analysis is how to qualitatively understand Algorithms
+
+Motivation: Algorithm Design
+- An Algorithm is a sequence of structured steps to solving a computational problem
+- When an Algorithm is developed, we evaluate the amount of time (CPU Cycles), 
+    and Space (memory) it requires
+- Realistically and Practical Algorithms are what we want,
+    i.e an algorithm that takes a 1000 years or millions of GBs are useless in practice
+- For Comparison, Asymptomatic Notation allows comparison of different algorithms to determine efficiency
+
+********************************
+
+Order of Growth (rate of Growth): A way to measure/evaluate algorithms
+    Domain & Range:
+In DS&A, all complexity functions map from Natural Numbers, N, to Positive Integers Z^+
+ == N = {0, 1, 2, ...} -> Z^+
+Input Sizes cannot be fractional or negative (illogical)
+
+********************************
+
+The 5 Asymptomatic Notations
+1. Big-O Notation: O -> Asymptomatic Upper Bound
+    Formal Def: f(n) = O(g(n)) is there exists positive constants c and n_0 s.t f(n) <= cg(n) for all n >= n_0
+    Meaning: f(n) grows no faster than g(n), provides an upper bound
+    Key Remarks: 
+        - Constants c and n_0 are independent of n 
+        - infinitely many valid pairs of (c, n_0)
+        - beyond the threshold n_0, the curve of f(n) always lies on or below cg(n)
+2. Big-Ω Notation: Ω -> Asymptomatic Lower Bound
+    Formal Def: f(n) = Ω(g(n)) if there exists positive constants c and n_0 s.t f(n) >= c(g(n)) for all n >= n_0
+    Meaning: f(n) grows at least as fast as g(n). provides a lower bound
+    Key Remarks: 
+        - Duality Principle: f(n) = Ω(g(n)) <=> g(n) = O(f(n))
+        - Constants c and n_0 are independent of n
+        - infinitely many valid pairs of (c, n_0)
+3. Big-Θ Notation: Θ -> Asymptomatic TIGHT Bound
+    Formal Def: f(n) = Θ(g(n)) if there exist positive constants c_1 > 0, c_2 > 0, and n_0 s.t. 
+                        c_1 g(n) <= f(n) <= c_2 g(n) for all n >= n_0
+    Alternative Def: f(n) = Θ(g(n)) iff/<=> f(n) = O(g(n)) and f(n) = Ω(g(n))
+    Meaning: f(n) and g(n) have the exact same growth rate.
+        - once functions past n_0, f(n) is 'sandwiched' between c_1 g(n) and c_2 g(n)
+4. little-o Notation: o -> Strict Upper Bound
+    Formal Def: f(n) = o(g(n)) if, for ALL positive constants c > 0, there exists an n_0, s.t 
+        f(n) < c g(n) for all n >= n_0.
+    Relationship to Big-O: f(n) = o(g(n)) => f(n) = O(g(n)), but the reverse ( <= ) is NOT true 
+        (Strictly less than, never equal to)
+5. Little-ω Notation: ω -> Strict Lower Bound
+    Formal Def: f(n) = ω(g(n)) if, for ALL positive constants c > 0, there exists an n_0 s.t 
+        c g(n) < f(n) for all n >= n_0.
+    Duality Principle: f(n) = ω(g(n)) <=> g(n)  = o(f(n))
+    Relationship to Big-Ω: f(n) = ω(g(n)) => f(n) = Ω(g(n)), but the reverse is not true
+
+Connection to Real-Numbers
+- Treat Asymptomatic comparison between functions f(n), g(n) similarly to comparing real numbers a,b:
+
+Table:
+Asymptomatic Relation |     Real Number Analogy |   Concept
+f(n) = O(g(n))              a <= b                  less than or equal to
+f(n) = Ω(g(n))              a >= b                  greater than or equal to
+f(n) = Θ(g(n))              a = b                   equal to
+f(n) = o(g(n))              a < b                   strictly less than       
+f(n) = ω(g(n))              a > b                   strictly greater than
+
+********************************
+
+Calculus-Based Limit Definitions
+
+Its possible to determine the relative (and exact) growth rate of two functions by 
+    taking the limit of their ratio as n approaches infinity 
+    (Apply L'Hopital's if needed when encountering indeterminate forms)
+The limit has 4 possible outcomes:
+1. The Limit is 0:      f(n) = o(g(n)) and f(n) = O(g(n))
+2. The Limit is ∞:      f(n) = ω(g(n)), g(n) = o(f(n)) and g(n) = O(f(n))
+3. The Limit is c != 0: f(n) = Θ(g(n)), f(n) = O(g(n)) and f(n) = Ω(g(n))
+4. The Limit DNE:       The growth of f(n) has no relation to the growth of g(n). Does not occur in standard Analysis
+Note: though n is used, we are actually using a CONTINUOUS calculus. In this case, n == x for mathematical convenience
+
+********************************
+
+Mathematical Evaluation Rules
+- Three familiar foundational theorems to quickly simplify complex algebraic runtime equations
+
+Thm 1. Sum and Product Rules:
+If T_1(n) = O(f(n)), and T_2(n) = O(g(n)),
+Then 
+    a. T_1(n) + T_2(n) = O(max[f(n), g(n)]) -> Dominant Term drops the lower Term
+    b. T_1(n) * T_2(n) = O(f(n) * g(n))
+
+Thm 2. Polynomial Rule: Highest Power term dominates the
+If f(n) = a_k * n^k + a_(k-1) * n^(k-1) + ... + a_0 is a Polynomial of degree k, with a_i are real numbers, with a_k != 0,
+Then f(n) = Θ(n^k) 
+
+Thm 3. Logarithm rule
+For any constants k, 
+    log^k n = O(n).
+Logarithmic Growth scales significantly slower than linear growth
+
+********************************
+
+Common Growth Rates
+- As n grows toward infinity, each class of functions grows significantly slower than the succeeding functions
+
+1 << log n << n << n log n << n^2 << 2^n << n!
+<=>
+Constant << Logarithmic << Linear << Linearithmic << Quadratic << Exponential << Factorial
+
+Practice Set:
+A. n^2 / 2 - 3n = Θ(n^2) ? 
+    ANS: True, by the Polynomial Rule, the highest degree is 2, so its tightly bounded by n^2
+        Confirmed by c_1 = 1/14, c_2 = 1/2, and threshold n_0 = 7
+
+B. 6n^3 = Θ(n^2) ?
+    ANS: False, using limits lim n->∞ 6n^3 / n^2 = lim n->∞ 6n = ∞.
+        Since the limit goes to infinity, 6n^3 = ω(n^2), thus it grows Strictly faster than n^2, NOT at the same rate
+
+C. f(n) = 3n^2 + 2n + 5 = O(n^2) ?
+    ANS: True, by Polynomial Rule, it is Θ(n^2). Because it is a tight bound == Θ, it inherently satisfies
+        the upper bound O Definition. Alternate: the ratio limit = 3.
+
+D. log^2 n = O(n) ?
+    ANS: True, applying log rule (Thm 3), where k = 2, we know it will scale significantly slower than linearly,
+        Thus always less than or at absolute maximum equal to O(n)
+
+E. log n = O(√n) ?
+    ANS: True, via L'Hopital's rule we have the limit evaluate to 0.
+    lim n->∞ [ log n / √n = (ln n / ln 2) / √n  -> d/dx( (ln n / ln 2) / √n ) = (1 / (ln n)n ) / (1/2√n) ] = 0.
+    Since the limit evaluates to 0, we conclude log(n) = o(√n) which directly proves it fits within the upper bound O(√n)
+    (Strictly less than exists within less than or equal to)

@@ -1,0 +1,77 @@
+Algorithms solve computational problems that need a computer to resolve.
+A Computational Problem specifies the problem input, a question to answer, and the desired output.
+Ex:
+    Find the sum of the first 3,000,000,000 odd integers
+    -input: 3,000,000,000
+    -question: sum of odd integers up to 3,000,000,000
+    -output: 9,000,000,000,000,000,000,000
+
+Algorithms describe a sequence of steps to solve a computational problem or perform a calculation
+- Described in abstract then implemented in a Language
+
+Example of computational problems
+- Given two DNA Sequences from different people, what is the longest shared sequence of nucleotides?
+- Given a product ID and a sorted array of products, is the product in stock and whats the price?
+- Given current location and desired location, what is the fasted route to walk to the destination?
+
+What to Analyze for an Algorithm:
+- Space Requirements
+- Time Requirements
+- More Complex notions but out of scope for now
+
+    IN GENERAL
+Algorithm time usage depends on the size of the input, N.
+=> Time Taken is measured as a function of the input == T(n)
+
+Input Size depends on question context:
+-Ex 1: DNA Analysis of longest shared sequence of 2 DNA Sequences
+    Input Size is the sum of the length of the two Sequences
+-Ex 2: Search Engine of an inventory
+    Input size is the size of the sorted Array
+
+RUNTIMES
+--------
+For Runtimes, we consider three specific cases:
+1. Best-Case Runtime 
+2. Worst-Case Runtime
+3. Average-Case Runtime
+
+For a given input n,
+- best-case runtime T_b(n), is the minimum number of basic operations/steps to complete over all inputs of size n
+    Provides Lower bound
+- worst-case runtime T_w(n), is the maximum number of basic operations/steps to complete over all inputs of size n
+    Provides Upper bound, guarantees algo will never take longer than this, Default analysis type
+- avg-case runtime T_ave(n), is the average number of basic operations/steps to complete over all inputs of size n
+    Provides typical performance, very difficult to compute, requires knowing or assuming the input distribution 
+    usually assuming all inputs are equally likely (impractical)
+
+    To compute T_ave(n), we must know/predict the distribution of the possible inputs of size n,
+
+Efficiency Rule: An algorithm is consider MORE efficient than another IF its worst-case runtime has a 
+    LOWER ORDER OF GROWTH
+
+Example(s) : Comparison Sorts
+1. Insertion Sort:
+    - Best: O(n)     - Average: O(n^2)     - Worst: O(n^2)
+2. Selection Sort:
+    - Best: O(n^2)     - Average: O(n^2)     - Worst: O(n^2)
+3. Quick Sort:
+    - Best: O(n log n)     - Average: O(n log n)     - Worst: O(n^2)
+4. Merge Sort:
+    - Best: O(n log n)     - Average: O(n log n)     - Worst: O(n log n)
+
+Example Analysis: Find Max Value in an Array
+{
+    maxVal = numbers[0]                     -> 1 operation: Array access + assignment (executed once) = O(2)   
+    for(int i = 0; i < n; i++){             -> Loop initialized once = O(1), 2 operations (i < 0, i++)    
+                                               Looped n times  = O(n),    
+        if(numbers[i] > maxVal){            -> 2 operations inside loop body (array access + comparison)
+            maxVal = numbers[i]             -> 2 ops in worst-case (array access + assignment)
+        }
+    }
+}
+    Total Count calculation
+Outside Loop -> 1 (init) + 1 (first check before loop entry/setup) + 1 =  3 Operations
+Inside Loop (n-times) -> 2 (loop steps) + 2 (worst-case if branch) = 4 operations per iteration 
+Calculation: 1 + 1 + 1 + n(2 + 2) = 4n + 3
+    Highest Order of growth scales linearly with n, the worst-case runtime is O(n)

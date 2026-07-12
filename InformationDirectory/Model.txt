@@ -1,0 +1,18 @@
+RAM-Model 
+
+Assumptions for the RAM-Model:
+- Generic One-Procecor, Random Access Machine (RAM), w/ theoretically infinite memory (modern systems compensate
+for this compared to early computer science iterations)
+A. Memory:              Infinite Memory
+B. Execution:           Operations are performed SEQUENTIALLY. No concurrent or parallel operations
+C. Time Complexity:     Memory access take 1-step 
+    - each simple operation takes 1-step
+D. Predictive Value:    RAM-Model analysus are great predictors/estimates of performance of actual hardware
+
+RAM Control Model only has simple Operations
+    1. Arithmetic Operations: Add, Subtract, multiply, divide, remainder, floor, ceiling...
+    2. Data Movement: Load, Store, Copy
+    3. Control: Conditional, Unconditional, subroutine call (for, while, do-while), return
+    4. Comparison: <, >, <=, >=, ==, !=
+Must build out from this set of rules
+

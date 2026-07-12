@@ -1,0 +1,4 @@
+I will be using a variety of learning material to complete this self guided course of C++.
+This can be viewed in the SetupNotes.txt and I will point out certain material for reference.
+
+This will cover C++ plus general programming topics as well.
