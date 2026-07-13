@@ -1,0 +1,14 @@
+Algo: Linear Search
+
+Core Concept and Intuition:
+-Finding a target value, v, on an unsorted collection of elements
+-Ex: Searching a bookcase for a specific book in a one-by-one/left to right format,
+    It does not require prior arrangement of the data
+
+Consider the Searching Problem:
+    Input:  A List of n Numbers, A = (a_1, a_2, ... , a_n), and a value v 
+    Output: An index i, s.t v = A[i] or -1 if the target value v is ot in A
+
+Linear Search
+Search Algorithm that starts at the beginning of a list and checks each element until the search key
+    is found or the end of the list is reached.
