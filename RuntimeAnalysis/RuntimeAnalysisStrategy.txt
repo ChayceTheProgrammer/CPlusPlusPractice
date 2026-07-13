@@ -1,0 +1,15 @@
+Analysis Strategy for Runtime of Algorithms
+
+When analyzing the worst-case runtime of an Algorithm, T_worst(n), always assume the program pathway
+    navigates down the largest scaling complex operation path.
+
+Summary of Strategy:
+1. Consecutive Statements:
+    O(f(n) + g(n)) = O(max(f(n), g(n)))
+2. Independent Loops:
+    Outer x Inner iterations
+3. Dependent Loops:
+    Model Loop with a summation Σ and simplify with algebraic sequence properties
+4. Conditionals:
+    Drop the Shorter Branch and measure the cost of the path with the highest upper bound
+
