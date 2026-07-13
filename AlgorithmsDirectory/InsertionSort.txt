@@ -1,1 +1,62 @@
 Algo: Insertion Sort
+
+Problem and Intuition:
+- Reorder an array of n elements, so the items are in non-decreasing order
+    (a'_1 <= a'_2 <= ... <= a'_n)
+-Sorting a hand of playing cards:
+    a. split the 'sorted hand' (left side) and 'unsorted/remaining' pile
+    b. pick one card from the pile, scan sorted hand from right to left,
+    c. shift larger cards over and place new card into correct ordered slot
+
+Algo Trace and D.S Layout Example
+- An array is conceptually split into a sorted subarray A[0, ... , j-1] and unsorted array A[j, ..., n-1]
+
+- Ex: Iteration for A = [2, 4, 7, 8, 3, 6] and inserting tmp = 3 (j = 4)
+    1. Init: tmp = A[4] = 3, index i = j - 1 = 3. A[i] = A[3] = 8.
+    2. Comparison 1:
+        is i >= 0 and A[3] > 3 ?
+        Yes -> 8 > 3
+            Shift A[3] rightward: A[4] = A[3] -> A = [2, 4, 5, 8, '8', 6]
+        Decrement i to 2
+    3. Comparison 2:
+        is i >= 0 and A[2] > 3?
+        Yes -> 7 > 3
+            Shift A[2] rightward: A[3] = A[2] -> A = [2, 4, 7, '7', 8, 6]
+        Decrement i to 1
+    4. Comparison 3:
+        is i >= 0 and A[1] > 3?
+        Yes -> 4 > 3
+            Shift A[1] rightward: A[2] = A[1] -> A = [2, 4, '4', 7. 8, 6]
+        Decrement i to 0
+    5. Comparison 4:
+        is i >= 0 and A[0] > 3?
+        No -> 2 !> 3
+            Loop Terminates because A[0] <= tmp
+    6. Insert tmp at A[i+1] -> A[1] = 3
+        Array after Insertion: A = [2, 3, 4, 7, 8, 6]
+    
+Time/Space Complexity
+A. Best-Case Time Complexity:
+    Ω(n), Occurs when the array is already sorted. Inner loop condition fails immediately on first check
+    A[i] <= tmp, executing O(1) steps per outer iteration.
+       n-1 
+        Σ C = O(n)
+       j=1
+B. Worst-Case Time Complexity:
+    Ω(n^2), Occurs when the array is in reverse sorted order. For every element j, the inner loop mist scan
+    and shift all j preceding elements
+       n-1 
+        Σ j = n(n-1) / 2 = O(n^2)
+       j=1
+C. Space Complexity:
+    O(1), since its an 'in-place' sorting algorithm, it rearranges elements strictly within the bounds of the 
+    original array using a constant amount of auxiliary workspace (tmp and i)
+
+Edge Cases:
+- Empty Lists: n = 0 is handled by loop boundary rules:
+    i < n and j < n
+- Duplicate Elements: will not swap duplicates past each other because inner loop condition
+                        specifies strictly greater-than (A[i] > tmp) 
+                        rather than greater-than-or-equal-to (A[i] >= tmp)
+    Maintains Stable Sorting Property
+
