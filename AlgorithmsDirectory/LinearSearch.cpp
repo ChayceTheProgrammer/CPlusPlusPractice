@@ -13,7 +13,7 @@ int linearSearch(int A[], int n, int v){
             return i; //return index where target is found
         }    
     }
-    return -1; //element not found
+    return -1; //element not found (Worst-Case)
 }
 
 
@@ -22,15 +22,12 @@ int main(){
     int myArray[] = {12, 45, 7, 93, 21, 56};
     int size = sizeof(myArray) / sizeof(myArray[0]);
     
-    // Define the value we want to look for
     int target = 21;
     
     cout << "Searching for " << target << " in the array..." << endl;
     
-    // Call the linearSearch function
     int resultIndex = linearSearch(myArray, size, target);
     
-    // Check the result and print an appropriate message
     if (resultIndex != -1) {
         cout << "Element found at index: " << resultIndex << endl;
     } else {
