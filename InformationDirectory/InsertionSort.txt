@@ -60,3 +60,35 @@ Edge Cases:
                         rather than greater-than-or-equal-to (A[i] >= tmp)
     Maintains Stable Sorting Property
 
+Conceptual Challenge:
+Suppose the inner loop boundary check of Insertion Sort is changed as so:
+- Before: While(i >= 0 and A[i] > tmp)
+- After:  While(i >= 0 and A[i] >= tmp)
+
+    Ex. Algo:
+    for (int j = 1; j < n; j++)
+    {
+        int tmp = A[j];
+        int i = j - 1;
+        /*
+        compares the current card (tmp) with each of the cards already in hand, from right to left
+        move A[i+1] by one position to the right until the proper position for tmp
+        the while loop terminates when:
+            a. A[i] <= tmp
+            b. i < 0, i.e i = -1
+        A[i+1] is the right position to store tmp (the current card)
+        */
+        while (i >= 0 && A[i] > tmp)
+        {
+            A[i+1] = A[i];
+            i--;
+        }
+        A[i+1] = tmp;
+    }
+
+1. What impact does this change have on the algo's 
+    - Worst Case:
+    - Best  Case:
+
+2. What impact does this change have on the 'stability' of the sorting algorithm
+    (i.e preserving the original relative order of duplicate elements) ?

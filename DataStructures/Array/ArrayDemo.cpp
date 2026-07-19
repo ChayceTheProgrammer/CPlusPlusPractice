@@ -22,13 +22,13 @@ void viewArray(int A[], int size){
 
 int main(){
     const int SIZE = 15; // Defining a manageable size for the showcase
-    int myArray[SIZE] = {}; // Creating the array in main memory
+    int A[SIZE] = {}; // Creating the array in main memory
     
     // 1. Populate the array using our function
-    makeArray(myArray, SIZE);
+    makeArray(A, SIZE);
     
     // 2. Display the array contents
-    viewArray(myArray, SIZE);
-    
+    viewArray(A, SIZE);
+        
     return 0;
 }

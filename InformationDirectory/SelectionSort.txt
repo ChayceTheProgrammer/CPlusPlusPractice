@@ -1,0 +1,9 @@
+Algo: Selection Sort
+
+Def: Sorting algorithm that divides the input into two sections
+    1. Sorted
+    2. Unsorted
+    Repeatedly selects the smallest element from the unsorted part and moves it to the unsorted part
+    - Sorted starts off empty and unsorted contains all the values to sort
+    - Repeatedly select smallest element from unsorted, move it to end of the sorted part
+
