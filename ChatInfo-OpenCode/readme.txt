@@ -1,0 +1,1 @@
+1st Chat: opencode -s ses_f3f4d77d3ffeheithnBHAVZD5z 
