@@ -1,0 +1,2 @@
+- List common mathematical functions for floating-point numbers. (e.g., sqrt, exp, log, sin, cos)
+- How can I handle floating-point precision issues? (Be mindful of precision errors)

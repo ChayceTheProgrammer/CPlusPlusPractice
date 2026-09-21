@@ -1,0 +1,5 @@
+- What are the basic sorting and searching algorithms? (See above; implement them in C++)
+- How can I read from and write to files in C++? (Use std::ifstream, std::ofstream, std::freight, etc.)
+- Can you explain the purpose of std::cout and std::cin? (Stream output and input)
+- How can I handle end-of-file (EOF) in file operations? (Use std::fekile and std::feof)
+- What is the purpose of fseek, ftell, and fclose? (Seek, tell, and close file pointers)

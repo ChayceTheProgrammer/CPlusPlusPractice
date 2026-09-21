@@ -1,0 +1,4 @@
+- How can I reverse a string without using built-in functions? (Use a loop or std::reverse)
+- Can you write a function to check if a string is a palindrome? (Compare characters from start and end)
+- What is the maximum product subarray problem, and how to solve it? (Track maximum/minimum products with sign changes)
+- How can I solve the classic puzzle of finding the odd coin out using a balance scale? (Divide and conquer approach)

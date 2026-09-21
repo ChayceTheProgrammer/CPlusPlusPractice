@@ -1,0 +1,4 @@
+- What is the purpose of preprocessor directives in C++? (Extending the syntax and compile-time functionality)
+- How can I define macros in C++? (Use #define)
+- What is conditional compilation in C++? (Use #if, #endif, and #preprocessor)
+- Can you explain the purpose of #pragma? (Special compiler instructions for specific implementations)

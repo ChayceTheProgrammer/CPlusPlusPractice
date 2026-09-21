@@ -1,0 +1,4 @@
+- What are pointers in C++? (Variables that store memory addresses)
+- How can I use pointers to dynamically allocate memory? (Using new and delete)
+- What is pointer arithmetic? (Incrementing or decrementing pointers to point to next memory locations)
+- What is the difference between a pointer and a reference? (Pointers are raw memory addresses; references are aliases pointing to variables)

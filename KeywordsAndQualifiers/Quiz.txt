@@ -1,0 +1,4 @@
+- What are the access specifiers in C++? (private, protected, public, static, const, volatile)
+- What is the purpose of const? (Makes variables or objects immutable)
+- What is the difference between static and const? (Static is for function/method persistence, const is for immutability)
+- What is the purpose of volatile? (Used in multithreaded programs to indicate data may be accessed externally)

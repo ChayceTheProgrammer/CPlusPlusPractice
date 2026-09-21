@@ -1,0 +1,4 @@
+- What are some common debugging techniques in C++? (Print statements, std::cout, assert macro)
+- How can I use log messages in my code? (Use std::cout at appropriate levels)
+- What is the purpose of try...catch...finally blocks? (To handle runtime errors gracefully)
+- How can I enable debugging in C++? (Set breakpoints with a debugger and log to stdout)

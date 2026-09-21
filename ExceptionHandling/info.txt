@@ -1,0 +1,3 @@
+- How can I use a try-catch-finally block in C++? (To handle runtime exceptions)
+- How can I use pointers with exceptions? (Use static_cast or direct pointer dereferencing)
+- What is the purpose of custom exceptions? (To encapsulate error messages and actions)

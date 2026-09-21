@@ -1,0 +1,4 @@
+- What is the purpose of common algorithms? (Examples: binary search, bubble sort, quicksort, Sieve of Eratosthenes)
+- How can I implement binary search in C++ for a sorted array? (Use std::lower_bound or std::upper_bound)
+- Can you explain the difference between std::sort and std::quick_sort? (Algorithm implementation differences)
+- What is the purpose of the Sieve of Eratosthenes? (Efficiently find all primes up to a given limit)
